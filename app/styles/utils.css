@@ -1,0 +1,147 @@
+.backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1;
+	display: grid;
+	place-content: center;
+	background-color: #222c;
+	padding: 1em;
+}
+
+.box,
+.button,
+.card {
+	padding: 2em;
+	background-color: var(--lighter);
+	box-shadow: -6px 8px 0 1px var(--dark);
+	border: 2px solid var(--dark);
+	border-radius: var(--radius);
+}
+
+.button,
+.card {
+	display: inline-block;
+	padding: 0.75em 1.5em;
+	color: var(--dark);
+	font-weight: bold;
+	text-decoration: none;
+	transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.button:hover,
+.card:hover {
+	transform: translateY(-1px);
+	box-shadow: -8px 10px 0 2px var(--dark);
+}
+
+.button:hover {
+	background-color: var(--lightest);
+}
+
+.button:disabled {
+	background-color: var(--light);
+}
+
+.card {
+	aspect-ratio: 40 / 21;
+	width: 100%;
+	max-width: 400px;
+	display: grid;
+	grid-template: 1fr / 1fr;
+	grid-template-areas: 'one';
+	padding: 0;
+	text-decoration: none;
+	background-color: var(--light);
+}
+
+.cardImages {
+	grid-area: one;
+	display: grid;
+	grid-auto-flow: column;
+	overflow: hidden;
+}
+
+.cardImage {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.cardTitle,
+.cardEdit {
+	grid-area: one;
+	background-color: var(--lighter);
+	padding: 0.5em 1em;
+	transition: background-color 0.3s;
+}
+
+.cardTitle {
+	justify-self: start;
+	align-self: end;
+	min-width: 240px;
+	min-height: 60px;
+	border-top-right-radius: var(--radius);
+}
+
+.cardEdit {
+	justify-self: end;
+	align-self: start;
+	border-bottom-left-radius: var(--radius);
+	text-decoration: none;
+}
+
+.card:hover .cardTitle {
+	background-color: var(--lightest);
+}
+
+.close {
+	position: absolute;
+	top: 0.75em;
+	right: 0.75em;
+	border: 0;
+	padding: 0.1em 0.5em;
+	background-color: var(--lighter);
+	border-radius: var(--radius);
+	cursor: pointer;
+	transition: transform 0.15s;
+}
+
+.close::before {
+	content: '×';
+	font-size: xx-large;
+}
+
+.close:hover {
+	transform: scale(1.25);
+}
+
+.grid {
+	display: grid;
+	gap: 2em;
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+@media (min-width: 700px) {
+	.grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 900px) {
+	.grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.screenReaderOnly:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

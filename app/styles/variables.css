@@ -1,0 +1,8 @@
+body {
+	--dark: #222;
+	--light: #bbb;
+	--lighter: #eee;
+	--lightest: #fff;
+	--radius: 0.4rem;
+	--bold: 500;
+}

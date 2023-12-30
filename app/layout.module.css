@@ -1,0 +1,29 @@
+.container {
+	display: grid;
+	padding: 2em 2em 5em;
+	margin-inline: auto;
+	max-width: 1328px;
+}
+
+.home {
+	width: clamp(12em, 50vmin, 16em);
+}
+
+.nav {
+	position: fixed;
+	bottom: 1.5em;
+	right: 1em;
+	z-index: 1;
+	display: grid;
+	grid-auto-flow: column;
+	gap: 1.5em;
+}
+
+@media (min-width: 600px) {
+	.nav {
+		position: absolute;
+		top: 1.5em;
+		right: 1.5em;
+		bottom: auto;
+	}
+}

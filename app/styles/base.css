@@ -1,0 +1,95 @@
+* {
+	box-sizing: border-box;
+	position: relative;
+	accent-color: var(--dark);
+	scroll-margin-top: 5em;
+}
+
+html,
+body {
+	margin: 0;
+	font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro,
+		sans-serif;
+	font-weight: 300;
+	line-height: 1.4;
+	color: var(--dark);
+	background-color: var(--lighter);
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+a,
+button {
+	color: var(--dark);
+}
+
+a:has(svg) {
+	text-decoration: none;
+}
+
+button {
+	background-color: inherit;
+}
+
+[aria-current='page'] {
+	font-weight: var(--bold);
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+legend {
+	font-weight: var(--bold);
+}
+
+h1 {
+	font-size: 2em;
+}
+
+ol > li {
+	margin-block: 1em;
+}
+
+input,
+textarea {
+	padding: 0.75em;
+	font-weight: var(--bold);
+	color: var(--dark);
+	border: solid 2px currentColor;
+	background-color: transparent;
+	border-radius: var(--radius);
+	overflow: hidden;
+}
+
+input:focus,
+textarea:focus {
+	background-color: var(--lightest);
+	outline: none;
+}
+
+[type='radio'] {
+	margin-right: 0.5em;
+	height: 1.4em;
+	width: 1.4em;
+	vertical-align: text-bottom;
+}
+
+label:has([type='radio']) {
+	font-weight: inherit;
+}
+
+small {
+	font-weight: normal;
+}
+
+strong {
+	font-weight: bold;
+}
