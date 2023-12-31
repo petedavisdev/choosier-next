@@ -1,4 +1,6 @@
+import { CategoryNav } from './CategoryNav';
 import Link from 'next/link';
+import { PATHS } from './CONSTANTS';
 
 export default function HomePage() {
 	return (
@@ -8,7 +10,7 @@ export default function HomePage() {
 				Visual decisions made easy
 			</h1>
 
-			{/* <CategoriesNav /> */}
+			<CategoryNav />
 
 			{/* <List filter={['visibility', 'promoted']} open /> */}
 
@@ -44,7 +46,7 @@ export default function HomePage() {
 			</article>
 
 			<h2>
-				<Link href={'/+'} className="button">
+				<Link href={PATHS.create} className="button">
 					+ Create an image poll
 				</Link>
 			</h2>

@@ -7,6 +7,7 @@ import $style from './layout.module.css';
 import Link from 'next/link';
 import { Logo } from './Logo';
 import type { Metadata } from 'next';
+import { PATHS } from './CONSTANTS';
 
 export const metadata: Metadata = {
 	title: {
@@ -32,30 +33,26 @@ export default function RootLayout(props: RootLayoutProps) {
 
 					{props.children}
 					<nav className={$style.nav}>
-						{/* <NuxtLink
-				:to="profile?.username ? PATHS.user + profile?.username : PATHS.user"
-				className="button"
-			>
-				{{
-					profile?.username
-						? profile?.username
-						: profile?.userId
-							? 'Account'
-							: 'Login'
-				}}
-			</NuxtLink>
-			<NuxtLink :to="PATHS.new" className="New button">+ New</NuxtLink> */}
+						<a href={PATHS.user} className="button">
+							Login
+						</a>
+						<a href={PATHS.create} className="button">
+							+ New
+						</a>
 					</nav>
 				</main>
 
 				<footer className={$style.container}>
 					<p>
-						{/* <NuxtLink to="/about">About</NuxtLink> |
-			<NuxtLink to="/privacy">Essential cookies only</NuxtLink> |
-			<NuxtLink to="/terms">Terms of use</NuxtLink> | Choosier &copy;
-			{{ new Date().getFullYear() }}
-			<LinkTo to="https://petedavis.dev">Pete Davis</LinkTo> |
-			<LinkTo to="/contact">Say hello 👋</LinkTo> */}
+						<Link href={PATHS.about}>About</Link> |
+						<Link href={PATHS.about + 'privacy'}>
+							Essential cookies only
+						</Link>{' '}
+						|<Link href={PATHS.about + 'terms'}>Terms of use</Link>{' '}
+						| Choosier &copy;
+						{new Date().getFullYear()}
+						<Link href="https://petedavis.dev">Pete Davis</Link> |
+						<Link href={PATHS.about + 'contact'}>Say hello 👋</Link>
 					</p>
 				</footer>
 			</body>

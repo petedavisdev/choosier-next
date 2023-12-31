@@ -6,7 +6,7 @@
 }
 
 .home {
-	width: clamp(12em, 50vmin, 16em);
+	width: clamp(12rem, 50vmin, 16rem);
 }
 
 .nav {

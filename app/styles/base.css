@@ -34,7 +34,7 @@ button {
 	background-color: inherit;
 }
 
-[aria-current='page'] {
+a.current {
 	font-weight: var(--bold);
 	text-decoration: none;
 }
