@@ -1,4 +1,4 @@
-import { CATEGORIES, PATHS } from './CONSTANTS';
+import { CATEGORIES, PATHS } from '../../CONSTANTS';
 
 import $style from './CategoryNav.module.css';
 import Link from 'next/link';

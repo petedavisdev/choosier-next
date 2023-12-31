@@ -1,6 +1,9 @@
-import { CategoryNav } from './CategoryNav';
+import { ChoiceList, ChoiceListSkeleton } from './ChoiceList';
+
+import { CategoryNav } from './-/[category]/CategoryNav';
 import Link from 'next/link';
 import { PATHS } from './CONSTANTS';
+import { Suspense } from 'react';
 
 export default function HomePage() {
 	return (
@@ -15,14 +18,9 @@ export default function HomePage() {
 			{/* <List filter={['visibility', 'promoted']} open /> */}
 
 			<section className="grid">
-				<article className="card">
-					<div className="cardTitle"></div>
-				</article>
-				<article className="card"></article>
-				<article className="card"></article>
-				<article className="card"></article>
-				<article className="card"></article>
-				<article className="card"></article>
+				<Suspense fallback={<ChoiceListSkeleton count={3} />}>
+					<ChoiceList />
+				</Suspense>
 			</section>
 
 			<article>

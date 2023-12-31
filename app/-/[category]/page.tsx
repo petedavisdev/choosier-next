@@ -1,6 +1,6 @@
 import { CATEGORIES } from '../../CONSTANTS';
 import { CONTENT } from './CONTENT';
-import { CategoryNav } from '../../CategoryNav';
+import { CategoryNav } from './CategoryNav';
 import { Metadata } from 'next';
 
 type CategoryPageProps = {
